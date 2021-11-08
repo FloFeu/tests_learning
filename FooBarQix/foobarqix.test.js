@@ -23,16 +23,27 @@ describe('FooBarQix Unit Tests Suites', () => {
         expect(foobarqix(21)).toContain("FooQix")
     })
 
-    it('should add "Foo" for each 3 present in the input', () =>{
+    it('should add "Foo" for each 3 present in the input', () => {
         expect(foobarqix(33)).toContain("FooFooFoo")
     })
 
-    it('should add "Bar" for each 5 present in the input', () =>{
+    it('should add "Bar" for each 5 present in the input', () => {
         expect(foobarqix(55)).toContain("BarBarBar")
     })
 
-    it('should add "Qix" for each 7 present in the input', () =>{
+    it('should add "Qix" for each 7 present in the input', () => {
         expect(foobarqix(77)).toContain("QixQixQix")
     })
 
+    it('should replace 0 by *', () => {
+        expect(foobarqix(101)).toBe('1*1')
+    })
+
+    it('should replace 0 by *', () => {
+        expect(foobarqix(303)).toBe('FooFoo*Foo')
+    })
+
+    it('should return FooQix**', () => {
+        expect(foobarqix(10101)).toBe('FooQix**')
+    })
 })
