@@ -10,6 +10,8 @@ describe('Diamond Unit Test Suites', () => {
     })
 
     it('should display a diamond from letter B', () => {
-        expect(diamond('B')).toBe(` A \nB B\n A `)
+        expect(diamond('B')).toBe(` A 
+        B B
+         A `)
     })
 })

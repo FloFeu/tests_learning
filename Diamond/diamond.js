@@ -9,7 +9,9 @@ const diamond = (letter) => {
     }
     
     if (letter === 'B') {
-        result = ' A \nB B\n A '
+        result = ` A 
+        B B
+         A `
     }
     return result
 }
