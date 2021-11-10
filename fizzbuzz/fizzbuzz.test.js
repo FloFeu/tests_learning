@@ -13,6 +13,14 @@ describe('FizzBuzz Unit Test Suites', () => {
         expect(fizzbuzzLib.fizzbuzz(30)).toBe("fizzbuzz")
     })
 
+    it("should return lazz when input is divisible by 7", () => {
+        expect(fizzbuzzLib.fizzbuzz(14)).toBe("lazz")
+    })
+
+    it('should return fizzlazz when input is divisible by 3 and 7', () => {
+        expect(fizzbuzzLib.fizzbuzz(21)).toBe("fizzlazz")
+    })
+
     it("should return input if it doesn't check any cases", () => {
         expect(fizzbuzzLib.fizzbuzz(1)).toBe('1')
     })

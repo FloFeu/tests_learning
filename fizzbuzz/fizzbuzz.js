@@ -3,17 +3,27 @@
  * @returns {string}
  */
 const fizzbuzz = (input) => {
-    if (isMultipleOf(input, 15)) {
-        return "fizzbuzz"
-    } else if (isMultipleOf(input, 3)) {
-        return "fizz"
-    } else if (isMultipleOf(input, 5)) {
-        return "buzz"
-    } else {
-        return input.toString()
-    }
+    let result = ""
+    const mapValue = new Map([
+        [3, "fizz"],
+        [5, "buzz"],
+        [7, "lazz"]
+        ]
+    )
+
+    mapValue.forEach((value, key) => {
+        if (isMultipleOf(input, key)) result += value
+    })
+
+    return result || input.toString()
 }
 
+/**
+ * 
+ * @param {number} input 
+ * @param {number} modulo 
+ * @returns {boolean}
+ */
 const isMultipleOf = (input, modulo) => {
     if (input % modulo === 0) {
         return true
