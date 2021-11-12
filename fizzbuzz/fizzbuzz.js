@@ -8,11 +8,15 @@ const fizzbuzz = (input) => {
         [3, "fizz"],
         [5, "buzz"],
         [7, "lazz"]
-        ]
+    ]
     )
 
     mapValue.forEach((value, key) => {
-        if (isMultipleOf(input, key)) result += value
+        if (
+            (isMultipleOf(input, key)) ||
+            containsDigit(input, key)) {
+            result += value
+        }
     })
 
     return result || input.toString()
@@ -30,4 +34,10 @@ const isMultipleOf = (input, modulo) => {
     }
 }
 
-module.exports = { fizzbuzz, isMultipleOf }
+const containsDigit = (input, digit) => {
+    if (input.toString().indexOf(digit) > -1) {
+        return true
+    }
+}
+
+module.exports = { fizzbuzz, isMultipleOf, containsDigit }
